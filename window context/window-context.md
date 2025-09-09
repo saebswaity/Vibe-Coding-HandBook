@@ -128,31 +128,15 @@ Models struggle with tasks requiring true semantic understanding when overloaded
 
 Based on research, here's how to structure your prompts for maximum effectiveness:
 
-```
-┌─────────────────────────────────────────────┐
-│ 🟢 BEGINNING (High Performance Zone)        │
-│ • System prompt                             │
-│ • Core instructions                         │
-│ • Critical definitions                      │
-├─────────────────────────────────────────────┤
-│ 🟡 EARLY MIDDLE                            │
-│ • Examples                                  │
-│ • Reference materials                       │
-├─────────────────────────────────────────────┤
-│ 🔴 MIDDLE (Danger Zone - Avoid!)           │
-│ • Less important background                 │
-│ • Optional context                          │
-├─────────────────────────────────────────────┤
-│ 🟡 LATE MIDDLE                             │
-│ • Supporting information                    │
-│ • Additional context                        │
-├─────────────────────────────────────────────┤
-│ 🟢 END (High Performance Zone)             │
-│ • The actual task/question                 │
-│ • Output format requirements               │
-│ • "Now, please..."                         │
-└─────────────────────────────────────────────┘
-```
+| Zone | Position | What to Place |
+|------|----------|---------------|
+| 🟢 Beginning (High Performance Zone) | 0-20% | System prompt, Core instructions, Critical definitions |
+| 🟡 Early Middle | 20-40% | Examples, Reference materials |
+| 🔴 Middle (Danger Zone) | 40-60% | Less important background, Optional context |
+| 🟡 Late Middle | 60-80% | Supporting information, Additional context |
+| 🟢 End (High Performance Zone) | 80-100% | The actual task/question, Output format requirements, "Now, please..." |
+
+*Note: Positions are relative to the current prompt. In ongoing conversations, previous messages shift these zones over time as new prompts and responses are added.*
 
 ### 📝 Real Example
 
