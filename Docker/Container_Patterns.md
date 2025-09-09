@@ -157,28 +157,27 @@ Unlike simple patterns that restart entire containers, the manager-based archite
 - Maintains zero-downtime during recovery operations
 - Preserves container state and mounted volumes
 
-#### 📊 **Intelligent Routing & Load Balancing**
+#### 📊 **Intelligent Routing**
 The manager-based architecture provides:
 - Single entry point for all HTTP traffic (port 80)
 - URL-based routing (`/` → frontend, `/api/*` → backend)
 - CORS handling for cross-origin requests
-- Request load balancing across service instances
+- Clean separation of frontend and backend traffic
 
 #### 🔧 **Production-Ready Reliability**
-Advanced features not found in simple patterns:
-- Automated health monitoring with multiple check types
-- Graceful failure handling and recovery
-- Process-level service management
-- Centralized logging and error handling
+Practical reliability features:
+- Automated health monitoring for all services
+- Graceful failure handling and service recovery
+- Process-level service management within containers
+- Centralized logging through the manager container
 
 #### 🚀 **Scalability & Performance**
-Superior scaling capabilities:
-- Horizontal scaling of individual services
-- Resource optimization through container specialization
-- Efficient inter-container communication
-- Performance monitoring and optimization
+Practical scaling capabilities:
+- Independent scaling of frontend, backend, and database services
+- Efficient container-to-container communication via Docker networks
+- Process-level optimization within each service container
 
-This architecture transforms simple container patterns into a production-ready, enterprise-grade solution that maintains the simplicity of containerization while adding the sophistication needed for real-world applications.
+This architecture provides a solid foundation for production applications while maintaining the simplicity of containerization for development and deployment.
 
 ## Complete Architecture Patterns Comparison
 
