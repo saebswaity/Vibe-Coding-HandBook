@@ -119,29 +119,45 @@ All simple container patterns (Monolithic, Two-Tier, Three-Tier) share fundament
 - **Technology Lock-in**: Hard to upgrade individual components without affecting others
 - **Deployment Complexity**: Manual orchestration and coordination required
 
-### How Manager-Based Architecture Overcomes All Limitations
+### How Manager-Based Architecture Addresses Key Limitations
 
-The Manager-Based architecture addresses **every limitation** of simple patterns through intelligent orchestration:
+The Manager-Based architecture significantly improves upon simple patterns, though it doesn't eliminate all limitations entirely. Three-tier architecture already solves most scaling challenges with less complexity:
 
-#### ✅ **Intelligent Scaling Solutions**
-- **Horizontal Scaling**: Add multiple instances of any service independently
-- **Load Balancing**: Automatic distribution of traffic across service instances
-- **Resource Optimization**: Each service gets exactly the resources it needs
+#### ⚠️ **Incremental Scaling Improvements**
+- **Horizontal Scaling**: Enables independent scaling (also achievable in three-tier with Docker Compose)
+- **Load Balancing**: Provides automatic traffic distribution (main advantage over three-tier)
+- **Resource Optimization**: Offers centralized resource management (marginal improvement over three-tier)
 
-#### ✅ **Automated Operations**
-- **Centralized Monitoring**: Continuous health checks for all services
-- **Surgical Recovery**: Restart individual services without container downtime
-- **Zero-Touch Management**: Single command deployment and management
+#### ⚠️ **Enhanced Operations**
+- **Centralized Monitoring**: Automated health checks (can be scripted in three-tier)
+- **Surgical Recovery**: Granular service restarts (improvement over container-level restarts)
+- **Streamlined Management**: Single-command operations (vs manual coordination in three-tier)
 
-#### ✅ **Enterprise Reliability**
-- **Fault Isolation**: Service failures are contained and automatically recovered
-- **High Availability**: Built-in redundancy and failover capabilities
-- **Production Readiness**: Enterprise-grade reliability with minimal operational overhead
+#### ⚠️ **Improved Reliability**
+- **Fault Isolation**: Better service isolation (three-tier already provides good isolation)
+- **High Availability**: Enhanced redundancy (requires additional configuration in three-tier)
+- **Production Readiness**: More automated reliability (vs manual setup in three-tier)
 
-#### ✅ **Developer Experience**
-- **Team Autonomy**: Independent development and deployment per service
-- **Technology Flexibility**: Upgrade any component without affecting others
-- **Simplified Workflow**: Automated orchestration handles complexity
+#### ⚠️ **Developer Benefits**
+- **Team Autonomy**: Independent service development (also available in three-tier)
+- **Technology Flexibility**: Easier component upgrades (improvement over three-tier)
+- **Workflow Automation**: Reduced manual orchestration (main productivity gain)
+
+### Realistic Assessment: When Orchestration Pays Off
+
+**Choose Manager-Based when:**
+- Your application serves 10K+ concurrent users requiring dynamic scaling
+- You have 5+ person development team with complex deployment needs
+- High availability (99.9%+ uptime) is critical with automatic failover
+- You need centralized monitoring across multiple services
+- Complex microservices communication requires intelligent routing
+
+**Stick with Three-Tier when:**
+- Application serves <10K users with predictable traffic
+- Small team (1-4 developers) can handle manual operations
+- 99% uptime is sufficient with basic monitoring
+- Simple service communication via direct API calls
+- Development velocity is prioritized over operational automation
 
 ### Key Architectural Advantages
 
@@ -168,11 +184,11 @@ Practical reliability features:
 
 #### 🚀 **Scalability & Performance**
 Practical scaling capabilities:
-- Independent scaling of frontend, backend, and database services
-- Efficient container-to-container communication via Docker networks
-- Process-level optimization within each service container
+- Independent scaling of services (also possible in three-tier with Docker Compose)
+- Efficient inter-container communication (similar performance to three-tier)
+- Process-level optimization (marginal improvement over three-tier)
 
-This architecture provides a solid foundation for production applications while maintaining the simplicity of containerization for development and deployment.
+This architecture provides enhanced automation for complex production environments, but three-tier often delivers sufficient performance for most applications with less operational overhead.
 
 ## Complete Architecture Patterns Comparison
 
